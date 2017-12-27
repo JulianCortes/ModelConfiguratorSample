@@ -1,0 +1,967 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e841119da0676b4d96eb19cfe3d9d6f, type: 3}
+  m_Name: DictionaryMaseratiLevante
+  m_EditorClassIdentifier: 
+  dictionary:
+    name: 
+    _entries:
+    - languageKey: EN
+      wordKey: package
+      wordValue: Package 111
+    - languageKey: EN
+      wordKey: rims
+      wordValue: Rims
+    - languageKey: EN
+      wordKey: calliperColor
+      wordValue: Calliper Color
+    - languageKey: EN
+      wordKey: interior
+      wordValue: Interior
+    - languageKey: EN
+      wordKey: interiorTrims
+      wordValue: Interior Trims
+    - languageKey: EN
+      wordKey: packagesOff
+      wordValue: Packages Off
+    - languageKey: EN
+      wordKey: sport
+      wordValue: Sport
+    - languageKey: EN
+      wordKey: luxury
+      wordValue: Luxury
+    - languageKey: EN
+      wordKey: verdeOssido
+      wordValue: Verde Ossido
+    - languageKey: EN
+      wordKey: grigio
+      wordValue: Grigio
+    - languageKey: EN
+      wordKey: grigioMetallo
+      wordValue: Grigio Metallo
+    - languageKey: EN
+      wordKey: grigioMaratea
+      wordValue: Grigio Maratea
+    - languageKey: EN
+      wordKey: bianco
+      wordValue: Bianco
+    - languageKey: EN
+      wordKey: biancoAlpi
+      wordValue: Bianco Alpi
+    - languageKey: EN
+      wordKey: champagne
+      wordValue: Champagne
+    - languageKey: EN
+      wordKey: rame
+      wordValue: Rame
+    - languageKey: EN
+      wordKey: rossoRubino
+      wordValue: Rosso Rubino
+    - languageKey: EN
+      wordKey: nero
+      wordValue: Nero
+    - languageKey: EN
+      wordKey: neroRibelle
+      wordValue: Nero Ribelle
+    - languageKey: EN
+      wordKey: bluPassione
+      wordValue: Blu Passione
+    - languageKey: EN
+      wordKey: bluEmozione
+      wordValue: Blu Emozione
+    - languageKey: EN
+      wordKey: borea
+      wordValue: 18'' Borea
+    - languageKey: EN
+      wordKey: zefiro
+      wordValue: 19'' Zefiro
+    - languageKey: EN
+      wordKey: nereo
+      wordValue: 20'' Nereo
+    - languageKey: EN
+      wordKey: anteo
+      wordValue: 21'' Anteo
+    - languageKey: EN
+      wordKey: cal_giallo
+      wordValue: Giallo
+    - languageKey: EN
+      wordKey: cal_rosso
+      wordValue: Rosso
+    - languageKey: EN
+      wordKey: cal_blu
+      wordValue: Blu
+    - languageKey: EN
+      wordKey: cal_nero
+      wordValue: Nero
+    - languageKey: EN
+      wordKey: cal_argento
+      wordValue: Argento
+    - languageKey: EN
+      wordKey: int_nero
+      wordValue: Nero
+    - languageKey: EN
+      wordKey: int_sabbiaNero
+      wordValue: Sabbia/Nero
+    - languageKey: EN
+      wordKey: int_neroCuciMarrone
+      wordValue: Nero with Cuoio stitching
+    - languageKey: EN
+      wordKey: int_neroCuciRosse
+      wordValue: Nero with Rosso stitching
+    - languageKey: EN
+      wordKey: int_neroCuciGrigie
+      wordValue: Nero with Grigio stitching
+    - languageKey: EN
+      wordKey: int_cuoio
+      wordValue: Cuoio
+    - languageKey: EN
+      wordKey: int_cuoioNero
+      wordValue: Cuoio/Nero
+    - languageKey: EN
+      wordKey: int_neroCuciSabbia
+      wordValue: Sabbia/Nero con Cuciture Sabbia
+    - languageKey: EN
+      wordKey: int_rosso
+      wordValue: Rosso with Nero stitching
+    - languageKey: EN
+      wordKey: int_marrone
+      wordValue: Marrone
+    - languageKey: EN
+      wordKey: int_sabbia
+      wordValue: Sabbia
+    - languageKey: EN
+      wordKey: int_zegnaNero
+      wordValue: Zegna Nero
+    - languageKey: EN
+      wordKey: int_zegnaCuoio
+      wordValue: Zegna Cuoio
+    - languageKey: EN
+      wordKey: int_zegnaRosso
+      wordValue: Zegna Rosso
+    - languageKey: EN
+      wordKey: blackPiano
+      wordValue: Black Piano
+    - languageKey: EN
+      wordKey: radica
+      wordValue: Radica
+    - languageKey: EN
+      wordKey: rovereChiaro
+      wordValue: Rovere Chiaro
+    - languageKey: EN
+      wordKey: ebano
+      wordValue: Ebano
+    - languageKey: EN
+      wordKey: erable
+      wordValue: Erable
+    - languageKey: EN
+      wordKey: carbonio
+      wordValue: Carbon Fiber
+    - languageKey: CH
+      wordKey: package
+      wordValue: "\u5957\u4EF6"
+    - languageKey: CH
+      wordKey: rims
+      wordValue: "\u8F6E\u8F8B"
+    - languageKey: CH
+      wordKey: calliperColor
+      wordValue: "\u5236\u52A8\u5361\u94B3"
+    - languageKey: CH
+      wordKey: interior
+      wordValue: "\u5185\u9970"
+    - languageKey: CH
+      wordKey: interiorTrims
+      wordValue: "\u9970\u4EF6"
+    - languageKey: CH
+      wordKey: packagesOff
+      wordValue: "\u5957\u4EF6\uFF1A\u5173\u95ED"
+    - languageKey: CH
+      wordKey: sport
+      wordValue: "\u8FD0\u52A8\u5957\u4EF6"
+    - languageKey: CH
+      wordKey: luxury
+      wordValue: "\u884C\u653F\u5957\u4EF6"
+    - languageKey: CH
+      wordKey: verdeOssido
+      wordValue: "\u6C27\u5316\u7EFF"
+    - languageKey: CH
+      wordKey: grigio
+      wordValue: "\u7070\u8272"
+    - languageKey: CH
+      wordKey: grigioMetallo
+      wordValue: "\u91D1\u5C5E\u7070"
+    - languageKey: CH
+      wordKey: grigioMaratea
+      wordValue: "Maratea\u7070\u8272"
+    - languageKey: CH
+      wordKey: bianco
+      wordValue: "\u767D\u8272"
+    - languageKey: CH
+      wordKey: biancoAlpi
+      wordValue: "\u963F\u5C14\u5351\u65AF\u767D"
+    - languageKey: CH
+      wordKey: champagne
+      wordValue: "\u9999\u69DF\u8272"
+    - languageKey: CH
+      wordKey: rame
+      wordValue: "\u94DC"
+    - languageKey: CH
+      wordKey: rossoRubino
+      wordValue: "\u5B9D\u77F3\u7EA2"
+    - languageKey: CH
+      wordKey: nero
+      wordValue: "\u9ED1\u8272"
+    - languageKey: CH
+      wordKey: neroRibelle
+      wordValue: "\u53CD\u53DB\u9ED1"
+    - languageKey: CH
+      wordKey: bluPassione
+      wordValue: "\u6FC0\u60C5\u84DD"
+    - languageKey: CH
+      wordKey: bluEmozione
+      wordValue: "\u795E\u60C5\u84DD"
+    - languageKey: CH
+      wordKey: borea
+      wordValue: "18'' \u8F66\u8F6E"
+    - languageKey: CH
+      wordKey: zefiro
+      wordValue: "19'' Zefiro\u8F66\u8F6E"
+    - languageKey: CH
+      wordKey: nereo
+      wordValue: "20'' Nereo\u8F66\u8F6E"
+    - languageKey: CH
+      wordKey: anteo
+      wordValue: "21'' Anteo\u8F66\u8F6E"
+    - languageKey: CH
+      wordKey: cal_giallo
+      wordValue: "\u9EC4\u8272"
+    - languageKey: CH
+      wordKey: cal_rosso
+      wordValue: "\u7EA2\u8272"
+    - languageKey: CH
+      wordKey: cal_blu
+      wordValue: "\u84DD\u8272"
+    - languageKey: CH
+      wordKey: cal_nero
+      wordValue: "\u9ED1\u8272"
+    - languageKey: CH
+      wordKey: cal_argento
+      wordValue: "\u94F6\u8272"
+    - languageKey: CH
+      wordKey: int_nero
+      wordValue: "\u9ED1\u8272"
+    - languageKey: CH
+      wordKey: int_sabbiaNero
+      wordValue: "\u76AE\u9769\u8272/\u9ED1\u8272"
+    - languageKey: CH
+      wordKey: int_neroCuciMarrone
+      wordValue: "\u9ED1\u8272\u914D\u4EE5\u76AE\u9769\u8272\u7F1D\u7EBF"
+    - languageKey: CH
+      wordKey: int_neroCuciRosse
+      wordValue: "\u9ED1\u8272\u914D\u7EA2\u7F1D\u7EBF"
+    - languageKey: CH
+      wordKey: int_neroCuciGrigie
+      wordValue: "\u68D5\u8272\u914D\u4EE5\u7070\u8272\u7F1D\u7EBF"
+    - languageKey: CH
+      wordKey: int_cuoio
+      wordValue: "\u76AE\u9769\u8272"
+    - languageKey: CH
+      wordKey: int_cuoioNero
+      wordValue: "\u76AE\u9769\u8272/\u9ED1\u8272"
+    - languageKey: CH
+      wordKey: int_neroCuciSabbia
+      wordValue: Sabbia/Nero con Cuciture Sabbia
+    - languageKey: CH
+      wordKey: int_rosso
+      wordValue: "\u7EA2\u8272\u914D\u9ED1\u8272\u7F1D\u7EBF"
+    - languageKey: CH
+      wordKey: int_marrone
+      wordValue: "\u68D5\u8272\u914D\u4EE5\u7070\u8272\u7F1D\u7EBF"
+    - languageKey: CH
+      wordKey: int_sabbia
+      wordValue: "\u6C99\u8272"
+    - languageKey: CH
+      wordKey: int_zegnaNero
+      wordValue: "\u6770\u5C3C\u4E9A\u771F\u4E1D / Nero\u9876\u7EA7\u76AE\u9769"
+    - languageKey: CH
+      wordKey: int_zegnaCuoio
+      wordValue: "\u6770\u5C3C\u4E9A\u771F\u4E1D / Cuoio\u9876\u7EA7\u76AE\u9769"
+    - languageKey: CH
+      wordKey: int_zegnaRosso
+      wordValue: "\u6770\u5C3C\u4E9A\u771F\u4E1D / Rosso\u9876\u7EA7\u76AE\u9769"
+    - languageKey: CH
+      wordKey: blackPiano
+      wordValue: "\u94A2\u7434\u9ED1"
+    - languageKey: CH
+      wordKey: radica
+      wordValue: "Radica \u539F\u6728"
+    - languageKey: CH
+      wordKey: rovereChiaro
+      wordValue: "\u6D45\u6A61\u6728"
+    - languageKey: CH
+      wordKey: ebano
+      wordValue: "\u4E4C\u6728"
+    - languageKey: CH
+      wordKey: erable
+      wordValue: "\u67AB\u6728"
+    - languageKey: CH
+      wordKey: carbonio
+      wordValue: "\u78B3\u7EA4\u7EF4"
+    - languageKey: DE
+      wordKey: package
+      wordValue: Pakete
+    - languageKey: DE
+      wordKey: rims
+      wordValue: Felgen
+    - languageKey: DE
+      wordKey: calliperColor
+      wordValue: "Bremss\xE4ttel"
+    - languageKey: DE
+      wordKey: interior
+      wordValue: Interieur
+    - languageKey: DE
+      wordKey: interiorTrims
+      wordValue: Applikationen
+    - languageKey: DE
+      wordKey: packagesOff
+      wordValue: 'Paket: OFF'
+    - languageKey: DE
+      wordKey: sport
+      wordValue: Sport-Paket
+    - languageKey: DE
+      wordKey: luxury
+      wordValue: Luxus-Paket
+    - languageKey: DE
+      wordKey: verdeOssido
+      wordValue: Verde Ossido
+    - languageKey: DE
+      wordKey: grigio
+      wordValue: Grigio
+    - languageKey: DE
+      wordKey: grigioMetallo
+      wordValue: Grigio Metallo
+    - languageKey: DE
+      wordKey: grigioMaratea
+      wordValue: Grigio Maratea
+    - languageKey: DE
+      wordKey: bianco
+      wordValue: Bianco
+    - languageKey: DE
+      wordKey: biancoAlpi
+      wordValue: Bianco Alpi
+    - languageKey: DE
+      wordKey: champagne
+      wordValue: Champagne
+    - languageKey: DE
+      wordKey: rame
+      wordValue: Rame
+    - languageKey: DE
+      wordKey: rossoRubino
+      wordValue: Rosso Rubino
+    - languageKey: DE
+      wordKey: nero
+      wordValue: Nero
+    - languageKey: DE
+      wordKey: neroRibelle
+      wordValue: Nero Ribelle
+    - languageKey: DE
+      wordKey: bluPassione
+      wordValue: Blu Passione
+    - languageKey: DE
+      wordKey: bluEmozione
+      wordValue: Blu Emozione
+    - languageKey: DE
+      wordKey: borea
+      wordValue: 18''-LMR im Borea-Design
+    - languageKey: DE
+      wordKey: zefiro
+      wordValue: 19''-LMR im Zefiro-Design
+    - languageKey: DE
+      wordKey: nereo
+      wordValue: 20''-LMR im Nereo-Design
+    - languageKey: DE
+      wordKey: anteo
+      wordValue: 21''-LMR im Anteo-Design
+    - languageKey: DE
+      wordKey: cal_giallo
+      wordValue: "Gelbe Bremss\xE4ttel"
+    - languageKey: DE
+      wordKey: cal_rosso
+      wordValue: "Rote Bremss\xE4ttel"
+    - languageKey: DE
+      wordKey: cal_blu
+      wordValue: "Blaue Bremss\xE4ttel"
+    - languageKey: DE
+      wordKey: cal_nero
+      wordValue: "Schwarze Bremss\xE4ttel"
+    - languageKey: DE
+      wordKey: cal_argento
+      wordValue: "Silberne Bremss\xE4ttel"
+    - languageKey: DE
+      wordKey: int_nero
+      wordValue: Schwarz
+    - languageKey: DE
+      wordKey: int_sabbiaNero
+      wordValue: Sabbia/Schwarz
+    - languageKey: DE
+      wordKey: int_neroCuciMarrone
+      wordValue: "Schwarz mit N\xE4hten in Cuoio"
+    - languageKey: DE
+      wordKey: int_neroCuciRosse
+      wordValue: "Schwarz mit N\xE4hten in Rot"
+    - languageKey: DE
+      wordKey: int_neroCuciGrigie
+      wordValue: "Schwarz mit N\xE4hten in Grigio"
+    - languageKey: DE
+      wordKey: int_cuoio
+      wordValue: Cuoio
+    - languageKey: DE
+      wordKey: int_cuoioNero
+      wordValue: Cuoio/Schwarz
+    - languageKey: DE
+      wordKey: int_neroCuciSabbia
+      wordValue: Sabbia/Nero con Cuciture Sabbia
+    - languageKey: DE
+      wordKey: int_rosso
+      wordValue: "Rosso mit N\xE4hten in Schwarz"
+    - languageKey: DE
+      wordKey: int_marrone
+      wordValue: "Braun mit N\xE4hten in Grigio"
+    - languageKey: DE
+      wordKey: int_sabbia
+      wordValue: Sabbia
+    - languageKey: DE
+      wordKey: int_zegnaNero
+      wordValue: Zegna Seide / Nero Premium Leder
+    - languageKey: DE
+      wordKey: int_zegnaCuoio
+      wordValue: Zegna Seide / Cuoio Premium Leder
+    - languageKey: DE
+      wordKey: int_zegnaRosso
+      wordValue: Zegna Seide / Rosso Premium Leder
+    - languageKey: DE
+      wordKey: blackPiano
+      wordValue: Applikationen aus schwarzen Pianolack
+    - languageKey: DE
+      wordKey: radica
+      wordValue: Applikationen aus Edelholz Radica
+    - languageKey: DE
+      wordKey: rovereChiaro
+      wordValue: Applikationen aus Edelholz Rovere Chiaro
+    - languageKey: DE
+      wordKey: ebano
+      wordValue: Applikationen aus Edelholz Ebano
+    - languageKey: DE
+      wordKey: erable
+      wordValue: Applikationen aus Edelholz Erable
+    - languageKey: DE
+      wordKey: carbonio
+      wordValue: Applikationen aus Carbon
+    - languageKey: IT
+      wordKey: package
+      wordValue: Pacchetto
+    - languageKey: IT
+      wordKey: rims
+      wordValue: Cerchi
+    - languageKey: IT
+      wordKey: calliperColor
+      wordValue: Pinze Freno
+    - languageKey: IT
+      wordKey: interior
+      wordValue: Interni
+    - languageKey: IT
+      wordKey: interiorTrims
+      wordValue: Modanatura
+    - languageKey: IT
+      wordKey: packagesOff
+      wordValue: 'Pacchetti: OFF'
+    - languageKey: IT
+      wordKey: sport
+      wordValue: Sport Package
+    - languageKey: IT
+      wordKey: luxury
+      wordValue: Luxury Pacakge
+    - languageKey: IT
+      wordKey: verdeOssido
+      wordValue: Verde Ossido
+    - languageKey: IT
+      wordKey: grigio
+      wordValue: Grigio
+    - languageKey: IT
+      wordKey: grigioMetallo
+      wordValue: Grigio Metallo
+    - languageKey: IT
+      wordKey: grigioMaratea
+      wordValue: Grigio Maratea
+    - languageKey: IT
+      wordKey: bianco
+      wordValue: Bianco
+    - languageKey: IT
+      wordKey: biancoAlpi
+      wordValue: Bianco Alpi
+    - languageKey: IT
+      wordKey: champagne
+      wordValue: Champagne
+    - languageKey: IT
+      wordKey: rame
+      wordValue: Rame
+    - languageKey: IT
+      wordKey: rossoRubino
+      wordValue: Rosso Rubino
+    - languageKey: IT
+      wordKey: nero
+      wordValue: Nero
+    - languageKey: IT
+      wordKey: neroRibelle
+      wordValue: Nero Ribelle
+    - languageKey: IT
+      wordKey: bluPassione
+      wordValue: Blu Passione
+    - languageKey: IT
+      wordKey: bluEmozione
+      wordValue: Blu Emozione
+    - languageKey: IT
+      wordKey: borea
+      wordValue: 18'' Borea
+    - languageKey: IT
+      wordKey: zefiro
+      wordValue: 19'' Zefiro
+    - languageKey: IT
+      wordKey: nereo
+      wordValue: 20'' Nereo
+    - languageKey: IT
+      wordKey: anteo
+      wordValue: 21'' Anteo
+    - languageKey: IT
+      wordKey: cal_giallo
+      wordValue: Giallo
+    - languageKey: IT
+      wordKey: cal_rosso
+      wordValue: Rosso
+    - languageKey: IT
+      wordKey: cal_blu
+      wordValue: Blu
+    - languageKey: IT
+      wordKey: cal_nero
+      wordValue: Nero
+    - languageKey: IT
+      wordKey: cal_argento
+      wordValue: Argento
+    - languageKey: IT
+      wordKey: int_nero
+      wordValue: Nero
+    - languageKey: IT
+      wordKey: int_sabbiaNero
+      wordValue: Sabbia/Nero
+    - languageKey: IT
+      wordKey: int_neroCuciMarrone
+      wordValue: Nero con Cuoio stitching
+    - languageKey: IT
+      wordKey: int_neroCuciRosse
+      wordValue: Nero con Rosso stitching
+    - languageKey: IT
+      wordKey: int_neroCuciGrigie
+      wordValue: Nero with Grigio stiching
+    - languageKey: IT
+      wordKey: int_cuoio
+      wordValue: Cuoio
+    - languageKey: IT
+      wordKey: int_cuoioNero
+      wordValue: Cuoio/Nero
+    - languageKey: IT
+      wordKey: int_neroCuciSabbia
+      wordValue: Sabbia/Nero con Cuciture Sabbia
+    - languageKey: IT
+      wordKey: int_rosso
+      wordValue: Rosso con Nero stitching
+    - languageKey: IT
+      wordKey: int_marrone
+      wordValue: Marrone
+    - languageKey: IT
+      wordKey: int_sabbia
+      wordValue: Sabbia
+    - languageKey: IT
+      wordKey: int_zegnaNero
+      wordValue: Zegna Nero
+    - languageKey: IT
+      wordKey: int_zegnaCuoio
+      wordValue: Zegna Cuoio
+    - languageKey: IT
+      wordKey: int_zegnaRosso
+      wordValue: Zegna Rosso
+    - languageKey: IT
+      wordKey: blackPiano
+      wordValue: Black Piano
+    - languageKey: IT
+      wordKey: radica
+      wordValue: Radica
+    - languageKey: IT
+      wordKey: rovereChiaro
+      wordValue: Rovere Chiaro
+    - languageKey: IT
+      wordKey: ebano
+      wordValue: Ebano
+    - languageKey: IT
+      wordKey: erable
+      wordValue: Erable
+    - languageKey: IT
+      wordKey: carbonio
+      wordValue: Carbonio
+    - languageKey: EN
+      wordKey: step1
+      wordValue: 'Step 1: Hold the device firmly with both hands as illustrated below.'
+    - languageKey: CH
+      wordKey: step1
+      wordValue: "\u7B2C\u4E00\u6B65\uFF1A\u5982\u4E0B\u56FE\u6240\u793A\uFF0C\u8BF7\u53CC\u624B\u7D27\u63E1\u8BBE\u5907
+        \u5411\u5DE6\u6ED1\u52A8\u7EE7\u7EED "
+    - languageKey: DE
+      wordKey: step1
+      wordValue: "Schritt 1: Halten Sie das Ger\xE4t mit beiden H\xE4nden wie unten
+        angezeigt. Wischen Sie nach LINKS um fortzufahren"
+    - languageKey: IT
+      wordKey: step1
+      wordValue: 'Step 1: Tenere il dispositivo saldamente con entrambe le mani come
+        illustrato di seguito.'
+    - languageKey: EN
+      wordKey: step2
+      wordValue: 'Step 2: Press and hold your left thumb to scroll through the components.
+        Release your thumb to select it.'
+    - languageKey: CH
+      wordKey: step2
+      wordValue: "\u7B2C\u4E8C\u6B65\uFF1A\u5DE6\u624B\u62C7\u6307\u6309\u4F4F\u5E76\u6ED1\u52A8
+        \u677E\u5F00\u624B\u6307\u9009\u62E9 "
+    - languageKey: DE
+      wordKey: step2
+      wordValue: 'Schritt 2: Linken Daumen auf den Bildschirm legen, um die verschiedenen
+        Ausstattungen zu sehen. Zur Auswahl den Daumen anheben. '
+    - languageKey: IT
+      wordKey: step2
+      wordValue: 'Step 2: Tenere premuto il pollice sinistro e trascinare per scorrere
+        le voci del menu. '
+    - languageKey: EN
+      wordKey: step3
+      wordValue: 'Step 3: Press and hold your RIGHT THUMB to customize the component.
+        Release your thumb to select it. '
+    - languageKey: CH
+      wordKey: step3
+      wordValue: "\u7B2C\u4E09\u6B65\uFF1A\u53F3\u624B\u6307\u6309\u4F4F\u4EE5\u81EA\u5B9A\u4E49\u7EC4\u4EF6
+        \u677E\u5F00\u624B\u6307\u9009\u62E9 "
+    - languageKey: DE
+      wordKey: step3
+      wordValue: 'Schritt 3: Rechten Daumen auf den Bildschirm legen, um die verschiedenen
+        Ausstattungen zu individualisieren. Zur Auswahl den Daumen anheben. '
+    - languageKey: IT
+      wordKey: step3
+      wordValue: 'Step 3: Tenere premuto il pollice destro e trascinare per personalizzare
+        la voce scelta.'
+    - languageKey: FR
+      wordKey: package
+      wordValue: Packs
+    - languageKey: FR
+      wordKey: rims
+      wordValue: Jantes alliage
+    - languageKey: FR
+      wordKey: calliperColor
+      wordValue: "\xC9triers de freins"
+    - languageKey: FR
+      wordKey: interior
+      wordValue: "Int\xE9rieur"
+    - languageKey: FR
+      wordKey: interiorTrims
+      wordValue: Finition
+    - languageKey: FR
+      wordKey: packagesOff
+      wordValue: 'Packs: OFF'
+    - languageKey: FR
+      wordKey: sport
+      wordValue: Pack Sport
+    - languageKey: FR
+      wordKey: luxury
+      wordValue: Pack Luxe
+    - languageKey: FR
+      wordKey: verdeOssido
+      wordValue: Verde Ossido
+    - languageKey: FR
+      wordKey: grigio
+      wordValue: Grigio
+    - languageKey: FR
+      wordKey: grigioMetallo
+      wordValue: Grigio Metallo
+    - languageKey: FR
+      wordKey: grigioMaratea
+      wordValue: Grigio Maratea
+    - languageKey: FR
+      wordKey: bianco
+      wordValue: Bianco
+    - languageKey: FR
+      wordKey: biancoAlpi
+      wordValue: Bianco Alpi
+    - languageKey: FR
+      wordKey: champagne
+      wordValue: Champagne
+    - languageKey: FR
+      wordKey: rame
+      wordValue: Rame
+    - languageKey: FR
+      wordKey: rossoRubino
+      wordValue: Rosso Rubino
+    - languageKey: FR
+      wordKey: nero
+      wordValue: Nero
+    - languageKey: FR
+      wordKey: neroRibelle
+      wordValue: Nero Ribelle
+    - languageKey: FR
+      wordKey: bluPassione
+      wordValue: Blu Passione
+    - languageKey: FR
+      wordKey: bluEmozione
+      wordValue: Blu Emozione
+    - languageKey: FR
+      wordKey: borea
+      wordValue: 18'' Borea
+    - languageKey: FR
+      wordKey: zefiro
+      wordValue: 19'' Zefiro
+    - languageKey: FR
+      wordKey: nereo
+      wordValue: 20'' Nereo
+    - languageKey: FR
+      wordKey: anteo
+      wordValue: 21'' Anteo
+    - languageKey: FR
+      wordKey: cal_giallo
+      wordValue: Giallo
+    - languageKey: FR
+      wordKey: cal_rosso
+      wordValue: Rosso
+    - languageKey: FR
+      wordKey: cal_blu
+      wordValue: Blu
+    - languageKey: FR
+      wordKey: cal_nero
+      wordValue: Nero
+    - languageKey: FR
+      wordKey: cal_argento
+      wordValue: Argento
+    - languageKey: FR
+      wordKey: int_nero
+      wordValue: Nero
+    - languageKey: FR
+      wordKey: int_sabbiaNero
+      wordValue: Sabbia/Nero
+    - languageKey: FR
+      wordKey: int_neroCuciMarrone
+      wordValue: Nero avec surpiqures Cuoio
+    - languageKey: FR
+      wordKey: int_neroCuciRosse
+      wordValue: Nero avec surpiqures Rosso
+    - languageKey: FR
+      wordKey: int_neroCuciGrigie
+      wordValue: Nero avec surpiqures Grigio
+    - languageKey: FR
+      wordKey: int_cuoio
+      wordValue: Cuoio
+    - languageKey: FR
+      wordKey: int_cuoioNero
+      wordValue: Cuoio/Nero
+    - languageKey: FR
+      wordKey: int_neroCuciSabbia
+      wordValue: Sabbia/Nero con Cuciture Sabbia
+    - languageKey: FR
+      wordKey: int_rosso
+      wordValue: Rosso avec surpiqures Nero
+    - languageKey: FR
+      wordKey: int_marrone
+      wordValue: Marrone avec surpiqures Grigio
+    - languageKey: FR
+      wordKey: int_sabbia
+      wordValue: Sabbia
+    - languageKey: FR
+      wordKey: int_zegnaNero
+      wordValue: Soie Ermenegildo Zegna / Cuir pleine fleur Nero
+    - languageKey: FR
+      wordKey: int_zegnaCuoio
+      wordValue: Soie Ermenegildo Zegna / Cuir pleine fleur Cuoio
+    - languageKey: FR
+      wordKey: int_zegnaRosso
+      wordValue: Soie Ermenegildo Zegna / Cuir pleine fleur Rosso
+    - languageKey: FR
+      wordKey: blackPiano
+      wordValue: Black Piano
+    - languageKey: FR
+      wordKey: radica
+      wordValue: Radica
+    - languageKey: FR
+      wordKey: rovereChiaro
+      wordValue: Rovere Chiaro
+    - languageKey: FR
+      wordKey: ebano
+      wordValue: Ebano
+    - languageKey: FR
+      wordKey: erable
+      wordValue: Erable
+    - languageKey: FR
+      wordKey: carbonio
+      wordValue: Carbonio
+    - languageKey: FR
+      wordKey: step1
+      wordValue: "\xC9tape\_1: tenez l\u2019appareil fermement avec les deux mains,
+        comme illustr\xE9 ci-dessous. Balayez vers la GAUCHE pour continuer."
+    - languageKey: FR
+      wordKey: step2
+      wordValue: "\xC9tape\_2: appuyez et maintenez votre pouce gauche sur l\u2019\xE9cran
+        pour faire d\xE9filer les diff\xE9rentes fonctionnalit\xE9s. Levez votre pouce
+        pour s\xE9lectionner l\u2019une d\u2019elles."
+    - languageKey: FR
+      wordKey: step3
+      wordValue: "\xC9tape\_3: appuyez et maintenez votre pouce droit sur l\u2019\xE9cran
+        pour personnaliser les fonctionnalit\xE9s. Levez votre pouce pour s\xE9lectionner
+        l\u2019une d\u2019elles."
+    - languageKey: EN
+      wordKey: openClose_hood
+      wordValue: Open/Close Hood
+    - languageKey: CH
+      wordKey: openClose_hood
+      wordValue: "\u542F\u52A8/\u5173\u95ED\u64CD\u4F5C\u7CFB\u7EDF"
+    - languageKey: DE
+      wordKey: openClose_hood
+      wordValue: "Motorhaube \xF6ffnen/schlie\xDFen"
+    - languageKey: IT
+      wordKey: openClose_hood
+      wordValue: Apri/Chiudi Cofano
+    - languageKey: FR
+      wordKey: openClose_hood
+      wordValue: Ouvrir/fermer le capot
+    - languageKey: EN
+      wordKey: openClose_boot
+      wordValue: Open/Close Boot
+    - languageKey: CH
+      wordKey: openClose_boot
+      wordValue: "\u6253\u5F00/\u5173\u95ED\u5F15\u64CE\u76D6"
+    - languageKey: DE
+      wordKey: openClose_boot
+      wordValue: "Kofferraum \xF6ffnen/schlie\xDFen "
+    - languageKey: IT
+      wordKey: openClose_boot
+      wordValue: Apri/Chiudi Bagagliaio
+    - languageKey: FR
+      wordKey: openClose_boot
+      wordValue: Ouvrir/fermer le coffre
+    - languageKey: EN
+      wordKey: startStop_engine
+      wordValue: Start/Stop Engine
+    - languageKey: CH
+      wordKey: startStop_engine
+      wordValue: "\u542F\u52A8/\u5173\u95ED\u53D1\u52A8\u673A"
+    - languageKey: DE
+      wordKey: startStop_engine
+      wordValue: 'Motor starten/ausschalten '
+    - languageKey: IT
+      wordKey: startStop_engine
+      wordValue: Accendi/Spegni Motore
+    - languageKey: FR
+      wordKey: startStop_engine
+      wordValue: "D\xE9marrer/arr\xEAter le moteur"
+    - languageKey: EN
+      wordKey: switchOnOff_headlights
+      wordValue: Switch On/Off Headlights
+    - languageKey: CH
+      wordKey: switchOnOff_headlights
+      wordValue: "\u6253\u5F00/\u5173\u95ED\u8F66\u5934\u706F"
+    - languageKey: DE
+      wordKey: switchOnOff_headlights
+      wordValue: 'Scheinwerfer ein-/ausschalten '
+    - languageKey: IT
+      wordKey: switchOnOff_headlights
+      wordValue: Accendi/Spegni Fari
+    - languageKey: FR
+      wordKey: switchOnOff_headlights
+      wordValue: "Allumer/\xE9teindre les phares"
+    - languageKey: EN
+      wordKey: test
+      wordValue: 1
+    - languageKey: CH
+      wordKey: test
+      wordValue: 1
+    - languageKey: DE
+      wordKey: test
+      wordValue: 1
+    - languageKey: IT
+      wordKey: test
+      wordValue: 1
+    - languageKey: FR
+      wordKey: test
+      wordValue: 1
+    _langKeys:
+    - EN
+    - CH
+    - DE
+    - IT
+    - FR
+    _wordKeys:
+    - package
+    - rims
+    - calliperColor
+    - interior
+    - interiorTrims
+    - packagesOff
+    - sport
+    - luxury
+    - verdeOssido
+    - grigio
+    - grigioMetallo
+    - grigioMaratea
+    - bianco
+    - biancoAlpi
+    - champagne
+    - rame
+    - rossoRubino
+    - nero
+    - neroRibelle
+    - bluPassione
+    - bluEmozione
+    - borea
+    - zefiro
+    - nereo
+    - anteo
+    - cal_giallo
+    - cal_rosso
+    - cal_blu
+    - cal_nero
+    - cal_argento
+    - int_nero
+    - int_sabbiaNero
+    - int_neroCuciMarrone
+    - int_neroCuciRosse
+    - int_neroCuciGrigie
+    - int_cuoio
+    - int_cuoioNero
+    - int_neroCuciSabbia
+    - int_rosso
+    - int_marrone
+    - int_sabbia
+    - int_zegnaNero
+    - int_zegnaCuoio
+    - int_zegnaRosso
+    - blackPiano
+    - radica
+    - rovereChiaro
+    - ebano
+    - erable
+    - carbonio
+    - step1
+    - step2
+    - step3
+    - openClose_hood
+    - openClose_boot
+    - startStop_engine
+    - switchOnOff_headlights
+    - test
