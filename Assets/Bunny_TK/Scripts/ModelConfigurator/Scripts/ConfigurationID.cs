@@ -11,7 +11,7 @@ namespace Bunny_TK.ModelConfigurator
     public class ConfigurationID : ConfigurationIDBase
     {
         //This class has a custom inspector to make it easy to read and use, but this requires a definition.
-
+        [HideInInspector]
         public ConfigurationDefinitions definition;
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Bunny_TK.ModelConfigurator
         {
             //Find the first ConfigurationDefinition in scene
             configValues = new List<ConfigValue>();
-            definition = FindObjectOfType<ConfigurationDefinitions>();
+            definition = Resources.LoadAll<ConfigurationDefinitions>("").FirstOrDefault();
         }
 
         /// <summary>

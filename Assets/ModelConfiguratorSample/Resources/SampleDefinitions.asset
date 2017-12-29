@@ -11,6 +11,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10aa2a0fd660f2d4799ba59c21abadcb, type: 3}
   m_Name: SampleDefinitions
   m_EditorClassIdentifier: 
-  definitionName: 
-  definitions: []
+  definitionName: Sample
+  definitions:
+  - type: Head
+    values:
+    - Horus
+    - Seth
+    - Scorpio
+  - type: Body
+    values:
+    - Small
+    - Medium
+    - Big
+  - type: Weapon
+    values:
+    - Hand
+    - Lance
+    - Sword
   restrictions: []

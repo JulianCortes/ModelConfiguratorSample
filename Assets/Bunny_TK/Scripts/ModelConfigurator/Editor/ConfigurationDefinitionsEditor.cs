@@ -24,6 +24,7 @@ namespace Bunny_TK.ModelConfigurator
 
         private Color defaultColor;
         private bool showNotes = true;
+        private int indexDef;
 
         public override void OnInspectorGUI()
         {
@@ -197,5 +198,7 @@ namespace Bunny_TK.ModelConfigurator
                 EditorUtility.SetDirty(c.gameObject);
             }
         }
+
+  
     }
 }

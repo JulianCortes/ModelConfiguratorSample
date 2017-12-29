@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using System.Linq;
 
 namespace Bunny_TK.Utils
 {
@@ -10,10 +9,10 @@ namespace Bunny_TK.Utils
     [CustomEditor(typeof(MaterialManager))]
     public class MaterialManagerEditor : Editor
     {
+        private GameObject go = null;
+        private bool isVisible = true;
 
-        GameObject go = null;
-
-        MaterialManager[] _Targets
+        private MaterialManager[] _Targets
         {
             get
             {
@@ -24,13 +23,19 @@ namespace Bunny_TK.Utils
                 return tmp.ToArray();
             }
         }
-        bool isVisible = true;
+
+
         public override void OnInspectorGUI()
         {
+            EditorGUI.BeginChangeCheck();
             base.OnInspectorGUI();
             EditorGUILayout.Space();
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
             EditorGUILayout.LabelField("Editor Only", EditorStyles.boldLabel);
-            if (GUILayout.Button("Apply Material"))
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            EditorGUILayout.LabelField("Preview");
+            EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("Apply Material", EditorStyles.miniButtonLeft))
             {
                 foreach (var t in _Targets)
                 {
@@ -38,57 +43,56 @@ namespace Bunny_TK.Utils
                     t.ApplyMaterial();
                 }
             }
-
-            if (GUILayout.Button("Select Meshes"))
+            if (GUILayout.Button("Select Meshes", EditorStyles.miniButtonRight))
             {
                 SelectMeshes();
             }
-            if (GUILayout.Button("Remove Duplicate and Empty"))
-            {
-                RemoveDuplicateAndEmpty();
-            }
-
+            EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
-            go = EditorGUILayout.ObjectField(go, typeof(GameObject), true) as GameObject;
+            EditorGUILayout.EndVertical();
+
+
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            EditorGUILayout.LabelField("Add/Remove");
+            go = EditorGUILayout.ObjectField("Target", go, typeof(GameObject), true) as GameObject;
 
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.BeginVertical();
-            if (GUILayout.Button("Add Mesh"))
+            if (GUILayout.Button("Add Target Mesh", EditorStyles.miniButtonLeft))
             {
                 Undo.RecordObjects(_Targets, "Add Mesh");
                 AddMesh();
             }
-            if (GUILayout.Button("Add Meshes Child"))
+            if (GUILayout.Button("Add Target Meshes Child", EditorStyles.miniButtonLeft))
             {
                 Undo.RecordObjects(_Targets, "Add Meshes");
                 AddMeshesChild();
             }
-            if (GUILayout.Button("Add Meshes from MaterialManager"))
+            if (GUILayout.Button("Add Meshes from MaterialManager", EditorStyles.miniButtonLeft))
             {
                 Undo.RecordObjects(_Targets, "Add Meshes");
                 AddMeshesFromMaterialManager();
             }
             EditorGUILayout.EndVertical();
             EditorGUILayout.BeginVertical();
-            if (GUILayout.Button("Remove Meshe"))
+            if (GUILayout.Button("Remove Target Mesh", EditorStyles.miniButtonRight))
             {
                 Undo.RecordObjects(_Targets, "Remove Mesh");
                 RemoveMesh();
             }
-            if (GUILayout.Button("Remove Meshes Child"))
+            if (GUILayout.Button("Remove Target Meshes Child", EditorStyles.miniButtonRight))
             {
                 Undo.RecordObjects(_Targets, "Remove Meshes");
                 RemoveMeshChild();
             }
-            if (GUILayout.Button("Remove Meshes Selected"))
+            if (GUILayout.Button("Remove Meshes Selected", EditorStyles.miniButtonRight))
             {
                 Undo.RecordObjects(_Targets, "Remove Meshes Selected");
                 RemoveMeshesSelected();
             }
             EditorGUILayout.EndVertical();
             EditorGUILayout.EndHorizontal();
-
-            if (GUILayout.Button("Toggle Active GOs"))
+            if (GUILayout.Button("Toggle Active GOs", EditorStyles.miniButton))
             {
                 Undo.RecordObjects(_Targets, "Toggle Active");
                 foreach (var t in _Targets)
@@ -96,7 +100,14 @@ namespace Bunny_TK.Utils
                         m.gameObject.SetActive(!isVisible);
                 isVisible = !isVisible;
             }
+            EditorGUILayout.EndVertical();
+            EditorGUILayout.EndVertical();
 
+            if (EditorGUI.EndChangeCheck())
+            {
+                Debug.Log("Changed!");
+                RemoveDuplicateAndEmpty();
+            }
         }
 
         private void SelectMeshes()
