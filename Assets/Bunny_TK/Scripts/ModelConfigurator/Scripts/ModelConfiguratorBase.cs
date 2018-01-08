@@ -6,7 +6,6 @@ using System;
 
 namespace Bunny_TK.ModelConfigurator
 {
-    [RequireComponent(typeof(ConfigurationIDBase))]
     public class ModelConfiguratorBase<T> : MonoBehaviour
                                    where T : ConfigurationIDBase
     {
@@ -15,6 +14,7 @@ namespace Bunny_TK.ModelConfigurator
         /// <summary>
         /// CurrentConfiguration will contain the results of ApplyConfiguration.
         /// </summary>
+        [HideInInspector]
         public T currentConfiguration;
         /// <summary>
         /// References of all configurations.
@@ -28,10 +28,16 @@ namespace Bunny_TK.ModelConfigurator
 
         private void Start()
         {
+            currentConfiguration = GetComponent<T>();
+            configurations.RemoveAll(c => c == null);
+            configurations = new HashSet<Configuration>(configurations).ToList();
             ApplyConfiguration();
         }
         private void Reset()
         {
+            if (GetComponent<ConfigurationIDBase>() == null)
+                gameObject.AddComponent<T>();
+
             currentConfiguration = GetComponent<ConfigurationIDBase>() as T;
         }
 

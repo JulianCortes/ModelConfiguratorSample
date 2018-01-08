@@ -9,8 +9,9 @@ using UnityEngine;
 public class ModelConfiguratorManagerEditor : Editor
 {
 
-    static bool showAdvancedControls;
+    static bool showAdvancedControls = true;
     static bool configurationsGrouped = true;
+    static ConfigurationID targetConf;
     //Deve creare la gerarchia di oggetti nella scena
     //Inizializzazione del target
     ModelConfiguratorManager Target
@@ -27,26 +28,42 @@ public class ModelConfiguratorManagerEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-
         EditorGUILayout.Space();
-        ConfigurationControls();
+        if (GUILayout.Button(showAdvancedControls ? "Hide Advanced Controls" : "Show Advanced Controls", EditorStyles.miniButton))
+            showAdvancedControls = !showAdvancedControls;
         EditorGUILayout.Space();
 
-        InitUpdate();
 
+        if (showAdvancedControls)
+        {
+            InitUpdate();
+            EditorGUILayout.Space();
+            ConfigurationControls();
+        }
     }
-
 
     private void ConfigurationControls()
     {
-        if (GUILayout.Button(showAdvancedControls ? "Hide Advanced Controls" : "Show Advanced Controls", EditorStyles.miniButton))
-            showAdvancedControls = !showAdvancedControls;
 
-        if (!showAdvancedControls) return;
+        if(Target.configurations == null || Target.configurations.Count <= 0)
+        {
+            return;
+        }
+
+        if (Target.currentConfiguration.definition == null)
+        {
+            ApplyConfig();
+            return;
+        }
+
         EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+        GUILayout.Label("Preview");
+        EditorGUILayout.Space();
+
+        ApplyConfig();
+        EditorGUILayout.Space();
 
         configurationsGrouped = EditorGUILayout.Toggle("Group by type", configurationsGrouped);
-        EditorGUILayout.Space();
 
         if (configurationsGrouped)
         {
@@ -68,7 +85,7 @@ public class ModelConfiguratorManagerEditor : Editor
                     ConfigValue temp = (Target.currentConfiguration as ConfigurationID).configValues.Find(v => v.typeIndex == i);
                     temp.ValueIndex--;
                     if (temp.ValueIndex < 0)
-                        temp.ValueIndex = Target.currentConfiguration.definition.GetAllValues(temp.typeIndex).Count() -1;
+                        temp.ValueIndex = Target.currentConfiguration.definition.GetAllValues(temp.typeIndex).Count() - 1;
                     if (temp.ValueIndex >= Target.currentConfiguration.definition.GetAllValues(temp.typeIndex).Count())
                         temp.ValueIndex = 0;
                     Target.ApplyConfiguration();
@@ -96,14 +113,12 @@ public class ModelConfiguratorManagerEditor : Editor
 
         }
 
-        if((Target.currentConfiguration as ConfigurationID).definition != null)
+        if ((Target.currentConfiguration as ConfigurationID).definition != null)
         {
-            if(GUILayout.Button("Randomize",EditorStyles.miniButton))
+            if (GUILayout.Button("Randomize", EditorStyles.miniButton))
             {
-                foreach(var v in Target.currentConfiguration.configValues)
-                {
+                foreach (var v in Target.currentConfiguration.configValues)
                     v.ValueIndex = Random.Range(0, Target.currentConfiguration.definition.GetAllValues(v.typeIndex).Count());
-                }
                 Target.ApplyConfiguration();
             }
         }
@@ -119,7 +134,6 @@ public class ModelConfiguratorManagerEditor : Editor
         GUILayout.Label("      ");
         EditorGUILayout.BeginHorizontal(EditorStyles.helpBox);
         GUILayout.Label(config.name);
-        //GUILayout.Label(config.LastStatus.ToString());
         GUILayout.FlexibleSpace();
         GUI.backgroundColor = defColor;
 
@@ -127,9 +141,25 @@ public class ModelConfiguratorManagerEditor : Editor
             Target.ApplyConfiguration(config.Id as ConfigurationID);
         if (GUILayout.Button("Ping", EditorStyles.miniButtonRight))
             EditorGUIUtility.PingObject(config);
+
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.EndHorizontal();
         GUI.backgroundColor = defColor;
+    }
+
+    private void ApplyConfig()
+    {
+        EditorGUILayout.BeginHorizontal();
+
+        EditorGUI.BeginDisabledGroup(targetConf == null);
+        if (GUILayout.Button("Apply", EditorStyles.miniButton))
+        {
+            Target.ApplyConfiguration(targetConf);
+        }
+        EditorGUI.EndDisabledGroup();
+        targetConf = EditorGUILayout.ObjectField(targetConf, typeof(ConfigurationID), true) as ConfigurationID;
+
+        EditorGUILayout.EndHorizontal();
     }
 
     private void ShowAllDefinitions()
@@ -167,7 +197,6 @@ public class ModelConfiguratorManagerEditor : Editor
 
         if (definitions != null)
         {
-            EditorGUILayout.Space();
 
             EditorGUILayout.LabelField("Update Configuration References Conditions");
             EditorGUI.indentLevel++;

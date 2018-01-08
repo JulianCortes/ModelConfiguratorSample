@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Bunny_TK.ModelConfigurator
 {
-    [ExecuteInEditMode]
     [RequireComponent(typeof(ConfigurationIDBase))]
     public class Configuration : MonoBehaviour
     {
@@ -13,7 +12,15 @@ namespace Bunny_TK.ModelConfigurator
         public List<MaterialManager> materialGroups;
 
         private ConfigurationIDBase _id;
-        public ConfigurationIDBase Id { get { return _id; } }
+        public ConfigurationIDBase Id
+        {
+            get
+            {
+                if (_id == null)
+                    _id = GetComponent<ConfigurationIDBase>();
+                return _id;
+            }
+        }
 
         public enum Status
         {
