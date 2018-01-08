@@ -8,6 +8,7 @@ public class ConfigOverlapTester : MonoBehaviour
     public ConfigurationID b;
     public ConfigurationID result;
     public bool overlap = false;
+    public bool overlapOnA = false;
     public bool checkEquality = false;
 
     // Use this for initialization
@@ -22,6 +23,12 @@ public class ConfigOverlapTester : MonoBehaviour
         {
             result.Overlap(a, b);
             overlap = false;
+        }
+
+        if(overlapOnA)
+        {
+            a.Overlap(b);
+            overlapOnA = false;
         }
 
         if (checkEquality)

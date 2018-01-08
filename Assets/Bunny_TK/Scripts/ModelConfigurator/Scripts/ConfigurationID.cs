@@ -113,7 +113,6 @@ namespace Bunny_TK.ModelConfigurator
         /// <param name="other"></param>
         public override void Overlap(ConfigurationIDBase other)
         {
-            if (!Similar(other)) return;
             Overlap(other as ConfigurationID);
         }
 

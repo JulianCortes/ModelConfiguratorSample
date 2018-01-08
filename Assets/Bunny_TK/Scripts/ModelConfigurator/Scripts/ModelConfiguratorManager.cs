@@ -8,6 +8,7 @@ namespace Bunny_TK.ModelConfigurator
     /// <summary>
     /// Simple extension for ConfigurationID
     /// </summary>
+    [ExecuteInEditMode]
     public class ModelConfiguratorManager : ModelConfiguratorBase<ConfigurationID>
     {
 

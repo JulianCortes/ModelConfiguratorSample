@@ -238,7 +238,7 @@ namespace Bunny_TK.ModelConfigurator
                     indexCurrentConfig++;
 
                 //Just to get sure we're not looping..
-                if (changesCount >= GetAllTypes().Count() * restrictions.Count())
+                if (restrictions.Count > 0 && changesCount >= GetAllTypes().Count() * restrictions.Count())
                 {
                     Debug.LogError("Possible restriction loop!");
                     return result;

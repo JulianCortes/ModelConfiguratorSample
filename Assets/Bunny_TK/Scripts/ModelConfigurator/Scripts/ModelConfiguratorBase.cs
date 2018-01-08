@@ -42,14 +42,11 @@ namespace Bunny_TK.ModelConfigurator
         /// <param name="targetConfiguration"></param>
         public virtual void ApplyConfiguration(T targetConfiguration)
         {
+            configurations.ForEach(c => c.Remove());
+
             currentConfiguration.Overlap(targetConfiguration);
-            configurations.Where(configuration => configuration.Id.Similar(targetConfiguration)).ToList()
+            configurations.Where(configuration => configuration.Id.Similar(currentConfiguration)).ToList()
                           .ForEach(similar => similar.ApplyConfiguration());
-            foreach (var c in configurations)
-                if (c.Id.Similar(targetConfiguration))
-                    c.ApplyConfiguration();
-                else
-                    c.Remove();
 
             if (OnAppliedConfiguration != null)
                 OnAppliedConfiguration();
