@@ -91,5 +91,11 @@ namespace Bunny_TK.Utils
             return targetMeshes.ToArray();
         }
 
+        public void SetTargetMeshes(IEnumerable<MeshRenderer> meshes)
+        {
+            targetMeshes = new List<MeshRenderer>(meshes);
+            RemoveEmptyEntries();
+            RemoveDuplicates();
+        }
     }
 }

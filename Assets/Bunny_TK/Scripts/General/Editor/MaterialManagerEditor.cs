@@ -9,9 +9,9 @@ namespace Bunny_TK.Utils
     [CustomEditor(typeof(MaterialManager))]
     public class MaterialManagerEditor : Editor
     {
+        private static List<MeshRenderer> copyList = new List<MeshRenderer>();
         private GameObject go = null;
         private bool isVisible = true;
-
         private MaterialManager[] _Targets
         {
             get
@@ -24,10 +24,8 @@ namespace Bunny_TK.Utils
             }
         }
 
-
         public override void OnInspectorGUI()
         {
-            EditorGUI.BeginChangeCheck();
             base.OnInspectorGUI();
             EditorGUILayout.Space();
             EditorGUILayout.BeginVertical(EditorStyles.helpBox);
@@ -100,14 +98,24 @@ namespace Bunny_TK.Utils
                         m.gameObject.SetActive(!isVisible);
                 isVisible = !isVisible;
             }
-            EditorGUILayout.EndVertical();
+            if (GUILayout.Button("Remove Duplicates or Missing", EditorStyles.miniButton))
+                RemoveDuplicateAndEmpty();
             EditorGUILayout.EndVertical();
 
-            if (EditorGUI.EndChangeCheck())
-            {
-                Debug.Log("Changed!");
-                RemoveDuplicateAndEmpty();
-            }
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            EditorGUILayout.LabelField("Substitute");
+            EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("Copy", EditorStyles.miniButtonLeft))
+                Copy();
+            EditorGUI.BeginDisabledGroup(copyList == null || copyList.Count <= 0);
+            if (GUILayout.Button("Paste", EditorStyles.miniButtonRight))
+                Paste();
+            EditorGUILayout.EndHorizontal();
+            if (GUILayout.Button("Select Copied", EditorStyles.miniButton))
+                SelectCopied();
+            EditorGUI.EndDisabledGroup();
+            EditorGUILayout.EndVertical();
+            EditorGUILayout.EndVertical();
         }
 
         private void SelectMeshes()
@@ -187,6 +195,30 @@ namespace Bunny_TK.Utils
                 foreach (var t in _Targets)
                     t.RemoveMesh(tmp);
             }
+        }
+
+        private void Copy()
+        {
+            if (_Targets.Count() == 1)
+                copyList = new List<MeshRenderer>(_Targets[0].GetTargetMeshes());
+        }
+
+        private void Paste()
+        {
+            if (copyList == null) return;
+            if (copyList.Count <= 0) return;
+
+            foreach (var t in _Targets)
+                t.SetTargetMeshes(copyList);
+        }
+
+        private void SelectCopied()
+        {
+            List<GameObject> tmp = new List<GameObject>();
+            foreach (var meshes in copyList)
+                tmp.Add(meshes.gameObject);
+
+            Selection.objects = tmp.ToArray();
         }
     }
 }

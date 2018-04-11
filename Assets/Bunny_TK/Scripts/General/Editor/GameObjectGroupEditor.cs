@@ -24,30 +24,31 @@ namespace Bunny_TK.Utils
             base.OnInspectorGUI();
 
             EditorGUILayout.Space();
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
             EditorGUILayout.LabelField("Editor Only", EditorStyles.boldLabel);
 
-            if (GUILayout.Button("Remove duplicates and missing"))
-            {
-                RemoveDuplicatesOrMissing();
-            }
-
             EditorGUILayout.BeginHorizontal();
-            if (GUILayout.Button("Select target GOs"))
+            if (GUILayout.Button("Select target GOs", EditorStyles.miniButtonLeft))
             {
                 SelectAllTargetGameObjects();
             }
 
-            if (GUILayout.Button("Select GOs to disable"))
+            if (GUILayout.Button("Select GOs to disable", EditorStyles.miniButtonRight))
             {
                 SelectAllDisabledGameObjects();
             }
             EditorGUILayout.EndHorizontal();
 
-            if (GUILayout.Button("Toggle"))
+            if (GUILayout.Button("Toggle Status", EditorStyles.miniButton))
             {
                 foreach (var t in _Targets)
                     t.IsActive = !t.IsActive;
             }
+            if (GUILayout.Button("Remove duplicates and missing", EditorStyles.miniButton))
+            {
+                RemoveDuplicatesOrMissing();
+            }
+            EditorGUILayout.EndVertical();
 
         }
 

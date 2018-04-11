@@ -1,5 +1,4 @@
 ﻿using Bunny_TK.ModelConfigurator;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -8,35 +7,34 @@ using UnityEngine;
 [CustomEditor(typeof(ModelConfiguratorManager))]
 public class ModelConfiguratorManagerEditor : Editor
 {
-
-    static bool showAdvancedControls = true;
-    static bool configurationsGrouped = true;
-    static ConfigurationID targetConf;
-    //Deve creare la gerarchia di oggetti nella scena
-    //Inizializzazione del target
-    ModelConfiguratorManager Target
-    {
-        get { return target as ModelConfiguratorManager; }
-    }
-
-    ConfigurationDefinitions definitions;
-    List<GameObject> types;
+    private static bool showAdvancedControls = true;
+    private static bool configurationsGrouped = true;
+    private static ConfigurationID targetConf;
+    private ConfigurationDefinitions definitions;
+    private List<GameObject> types;
     private int indexDef;
     private int indexConfigReferences;
     private bool sameDefinitionConfigReferences = true;
+
+    private ModelConfiguratorManager Target
+    {
+        get { return target as ModelConfiguratorManager; }
+    }
 
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
         EditorGUILayout.Space();
+
+        //Toggle button show controls
         if (GUILayout.Button(showAdvancedControls ? "Hide Advanced Controls" : "Show Advanced Controls", EditorStyles.miniButton))
             showAdvancedControls = !showAdvancedControls;
-        EditorGUILayout.Space();
 
+        EditorGUILayout.Space();
 
         if (showAdvancedControls)
         {
-            InitUpdate();
+            DefinitionInitControls();
             EditorGUILayout.Space();
             ConfigurationControls();
         }
@@ -44,27 +42,28 @@ public class ModelConfiguratorManagerEditor : Editor
 
     private void ConfigurationControls()
     {
-
-        if(Target.configurations == null || Target.configurations.Count <= 0)
-        {
+        //No configurations
+        if (Target.configurations == null || Target.configurations.Count <= 0)
             return;
-        }
 
+        //No definitions
         if (Target.currentConfiguration.definition == null)
         {
-            ApplyConfig();
+            ChangeConfigControls();
             return;
         }
 
+        //Start frame
         EditorGUILayout.BeginVertical(EditorStyles.helpBox);
         GUILayout.Label("Preview");
         EditorGUILayout.Space();
-
-        ApplyConfig();
+        ChangeConfigControls();
         EditorGUILayout.Space();
 
+        //Sort mode
         configurationsGrouped = EditorGUILayout.Toggle("Group by type", configurationsGrouped);
 
+        //Group by type
         if (configurationsGrouped)
         {
             for (int i = 0; i < Target.currentConfiguration.definition.GetAllTypes().Count(); i++)
@@ -72,9 +71,10 @@ public class ModelConfiguratorManagerEditor : Editor
                 EditorGUILayout.BeginVertical(EditorStyles.helpBox);
                 GUILayout.Label(Target.currentConfiguration.definition.IndexToType(i));
 
-                foreach (var c in Target.configurations.Where(c => c != null && (c.Id as ConfigurationID).configValues.Exists(v => v.typeIndex == i && v.ValueIndex != ConfigValue.UNDEFINED_VALUE)))
+                foreach (var c in Target.configurations.Where(c => c != null && (c.Id as ConfigurationID).configValues
+                                                       .Exists(v => v.typeIndex == i && v.ValueIndex != ConfigValue.UNDEFINED_VALUE)))
                     if (c != null)
-                        ShowConfig(c);
+                        ShowConfigDetails(c);
 
                 EditorGUILayout.Space();
                 EditorGUILayout.BeginHorizontal();
@@ -101,32 +101,28 @@ public class ModelConfiguratorManagerEditor : Editor
                     Target.ApplyConfiguration();
                 }
                 EditorGUILayout.EndHorizontal();
-
                 EditorGUILayout.EndVertical();
             }
         }
-        else
+        else //No grouping
         {
             foreach (var c in Target.configurations)
-                ShowConfig(c);
+                ShowConfigDetails(c);
             EditorGUILayout.Space();
-
         }
 
-        if ((Target.currentConfiguration as ConfigurationID).definition != null)
+        //Randomize button
+        if (GUILayout.Button("Randomize", EditorStyles.miniButton))
         {
-            if (GUILayout.Button("Randomize", EditorStyles.miniButton))
-            {
-                foreach (var v in Target.currentConfiguration.configValues)
-                    v.ValueIndex = Random.Range(0, Target.currentConfiguration.definition.GetAllValues(v.typeIndex).Count());
-                Target.ApplyConfiguration();
-            }
+            foreach (var v in Target.currentConfiguration.configValues)
+                v.ValueIndex = Random.Range(0, Target.currentConfiguration.definition.GetAllValues(v.typeIndex).Count());
+            Target.ApplyConfiguration();
         }
 
         EditorGUILayout.EndVertical();
     }
 
-    private void ShowConfig(Configuration config)
+    private void ShowConfigDetails(Configuration config)
     {
         Color defColor = GUI.backgroundColor;
         GUI.backgroundColor = config.LastStatus == Configuration.Status.Applied ? Color.green : defColor;
@@ -147,21 +143,24 @@ public class ModelConfiguratorManagerEditor : Editor
         GUI.backgroundColor = defColor;
     }
 
-    private void ApplyConfig()
+    /// <summary>
+    /// Apply configuration by reference.
+    /// </summary>
+    private void ChangeConfigControls()
     {
         EditorGUILayout.BeginHorizontal();
-
         EditorGUI.BeginDisabledGroup(targetConf == null);
         if (GUILayout.Button("Apply", EditorStyles.miniButton))
-        {
             Target.ApplyConfiguration(targetConf);
-        }
+
         EditorGUI.EndDisabledGroup();
         targetConf = EditorGUILayout.ObjectField(targetConf, typeof(ConfigurationID), true) as ConfigurationID;
-
         EditorGUILayout.EndHorizontal();
     }
 
+    /// <summary>
+    /// Popup from Resources folder.
+    /// </summary>
     private void ShowAllDefinitions()
     {
         EditorGUILayout.Space();
@@ -189,7 +188,10 @@ public class ModelConfiguratorManagerEditor : Editor
         EditorGUILayout.EndHorizontal();
     }
 
-    private void InitUpdate()
+    /// <summary>
+    /// Configurator definition and references controls.
+    /// </summary>
+    private void DefinitionInitControls()
     {
         EditorGUILayout.BeginVertical(EditorStyles.helpBox);
 
@@ -197,7 +199,6 @@ public class ModelConfiguratorManagerEditor : Editor
 
         if (definitions != null)
         {
-
             EditorGUILayout.LabelField("Update Configuration References Conditions");
             EditorGUI.indentLevel++;
             indexConfigReferences = EditorGUILayout.Popup("Hierarchy", indexConfigReferences, new string[] { "In children", "Global" });
@@ -266,6 +267,11 @@ public class ModelConfiguratorManagerEditor : Editor
         EditorGUILayout.EndVertical();
     }
 
+    /// <summary>
+    /// Search Configuration references.
+    /// </summary>
+    /// <param name="global"></param>
+    /// <param name="sameDefinition">Same definition as CurrentConfiguration.</param>
     private void UpdateConfigurationReferences(bool global, bool sameDefinition)
     {
         if (global)
@@ -289,6 +295,4 @@ public class ModelConfiguratorManagerEditor : Editor
                 Target.configurations = Target.GetComponentsInChildren<Configuration>().ToList();
         }
     }
-
-
 }
